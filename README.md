@@ -4,11 +4,12 @@ back-end project for setting up two-factor authentication with node, express.js,
 
 <hr>
 
-### start project
+## start project
 
 ```shell
 $ npm i
 $ npm run dev / npm start
 ```
 
-### swagger url : [http://localhost:3000/](http://localhost:3000/)
+## swagger url after stating application:
+### [http://localhost:3000/](http://localhost:3000/)
