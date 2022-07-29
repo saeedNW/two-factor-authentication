@@ -3,13 +3,13 @@ const express = require('express');
 /** create express Router instance */
 const router = express.Router();
 
-/** import register handler */
+/** import register and login handler */
 const {registerUser, loginUser} = require("../controller/authController");
 
 /**
  * @swagger
  * tags:
- *  name: authentication
+ *  name: Authentication
  *  description: authentication phone verification routes
  */
 
@@ -19,7 +19,7 @@ const {registerUser, loginUser} = require("../controller/authController");
  *  post:
  *      summary: user register route
  *      description: user registration process manager
- *      tags: [authentication]
+ *      tags: [Authentication]
  *      parameters:
  *          - name: name
  *            description: user full name
@@ -56,7 +56,7 @@ router.post('/register', registerUser)
  *  post:
  *      summary: user login route
  *      description: user login process manager
- *      tags: [authentication]
+ *      tags: [Authentication]
  *      parameters:
  *          - name: email
  *            description: user email address
@@ -72,8 +72,10 @@ router.post('/register', registerUser)
  *            required: true
  *            example: Aa1111
  *      responses:
- *          201:
- *              description: user logged successfully
+ *          200:
+ *              description: return user auth token
+ *          404:
+ *              description: used didn't found
  *          422:
  *              description: validation error
  *          500:

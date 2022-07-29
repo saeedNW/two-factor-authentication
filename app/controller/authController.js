@@ -50,7 +50,7 @@ const loginUser = async (req, res, next) => {
 
         if (!user) {
             const error = new Error("user didn't found")
-            error.status = 422
+            error.status = 404
             throw error
         }
 
@@ -60,7 +60,7 @@ const loginUser = async (req, res, next) => {
             throw error
         }
 
-        const token = jwt.sign({email: user.email}, config.JWT_SECRET, {
+        const token = jwt.sign({id: user._id}, config.JWT_SECRET, {
             expiresIn: 60 * 60 * 24
         });
 

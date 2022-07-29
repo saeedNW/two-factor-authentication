@@ -5,7 +5,7 @@ const swaggerJsDoc = require("swagger-jsdoc");
 
 /** swagger configs */
 exports.initializeSwagger = (app) => {
-    app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(swaggerJsDoc({
+    app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerJsDoc({
         swaggerDefinition: {
             info: {
                 title: "2FA",

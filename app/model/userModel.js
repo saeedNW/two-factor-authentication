@@ -25,6 +25,10 @@ const userSchema = new Schema({
     twoFactorSecret: {
         type: Object,
         default: null
+    },
+    twoFactorRecoveryCodes: {
+        type: [String],
+        default: []
     }
 }, {timestamps: true});
 
